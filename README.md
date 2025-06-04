@@ -1,12 +1,12 @@
 # SHOPIFY ANALYSIS USING POWERBI FOR VISUALISATION
 ![logo](https://cdn.shopify.com/s/files/1/0070/7032/articles/shopify_20stores_b12b3173-45ab-409a-9d73-d33898cfc696.png?v=1745508583)
 ## OBJECTIVE: 
-- Understanding the steps for Data Management and Visualisation.
-- Enhancing the comprehension of Data Connection, Data Cleaning, DAX calculations, Chart creation and formatting
-- Gaining insights from the visualisations.
+  - Understanding the steps for Data Management and Visualisation.
+  - Enhancing the comprehension of Data Connection, Data Cleaning, DAX calculations, Chart creation and formatting
+  - Gaining insights from the visualisations.
 
 ## DATASET
-- The dataset is attached to this repository
+  - The dataset is attached to this repository
 
 ## BUSINESS REQUIREMENTS 
 ### KPI and Customer Behavior Requirement
@@ -47,35 +47,35 @@ CALCULATE(
 
 ### Chart Requirement
 #### Regional Overview
-- The visualizations are designed to display performance based on different provinces, according to the selected measure. Second, the bubble map also gives insights into sales and customer density at a more granular level. Last, the bar chart illustrates the top performance based on the selected KPI.  
-<img width="413" alt="Screenshot 2025-06-04 110942" src="https://github.com/user-attachments/assets/488c2299-838d-47ec-989f-c49f75f9ea7d" />
-
--  DAX Formula for filter: `` Measure = {
-    ("Net Sales", NAMEOF('shopify_sales'[Net Sales]), 0),
-    ("total quantity", NAMEOF('shopify_sales'[total quantity]), 1),
-    ("Total Customer", NAMEOF('shopify_sales'[Total Customer]), 2),
-    ("Return Customer", NAMEOF('shopify_sales'[Return Customer]), 3)
-   }`` 
-- DAX Formula for Dynamics Title:
-`` Regional Title = SELECTEDVALUE('Measure'[Dynamic Title]) & " by Regions" ``
+  - The visualizations are designed to display performance based on different provinces, according to the selected measure. Second, the bubble map also gives insights into sales and customer density at a more granular level. Last, the bar chart illustrates the top performance based on the selected KPI.  
+  <img width="413" alt="Screenshot 2025-06-04 110942" src="https://github.com/user-attachments/assets/488c2299-838d-47ec-989f-c49f75f9ea7d" />
+  
+  -  DAX Formula for filter: `` Measure = {
+      ("Net Sales", NAMEOF('shopify_sales'[Net Sales]), 0),
+      ("total quantity", NAMEOF('shopify_sales'[total quantity]), 1),
+      ("Total Customer", NAMEOF('shopify_sales'[Total Customer]), 2),
+      ("Return Customer", NAMEOF('shopify_sales'[Return Customer]), 3)
+     }`` 
+  - DAX Formula for Dynamics Title:
+  `` Regional Title = SELECTEDVALUE('Measure'[Dynamic Title]) & " by Regions" ``
 
 #### Sales Trend Over Time
 
-- The area chart is used for trend by day, and the Bar Chart for trend by hour.
-- While the purpose of the area chart is to show the daily trend of the selected measure, that of the Bar Chart shows the sales and Customer Activity, which helps reveal the peak periods of customer activity
+  - The area chart is used for trend by day, and the Bar Chart for trend by hour.
+  - While the purpose of the area chart is to show the daily trend of the selected measure, that of the Bar Chart shows the sales and Customer Activity, which helps reveal the peak periods of customer activity
+    
+    <img width="445" alt="image" src="https://github.com/user-attachments/assets/9410c646-b8ed-42a9-8e6c-c3f5bde341f0" />
   
-  <img width="445" alt="image" src="https://github.com/user-attachments/assets/9410c646-b8ed-42a9-8e6c-c3f5bde341f0" />
-
-- DAX Formula for Dynamics Title:
-  `` Trend Title = SELECTEDVALUE('Measure'[Dynamic Title]) & " Trend Over Time"  ``
+  - DAX Formula for Dynamics Title:
+    `` Trend Title = SELECTEDVALUE('Measure'[Dynamic Title]) & " Trend Over Time"  ``
 
   #### Gateway Payment Method and Product Type
 
-- Chart types: the Donut Chart for Gateway and the Bar Chart for Product type
-- Purpose: The Gateway exploration provides us with insights into the most and least payment methods which have been used, and the Product Types chart illustrates what types generate the highest revenue and order volume
- <img width="434" alt="image" src="https://github.com/user-attachments/assets/0f9b408c-937a-4618-945a-11bf5b210233" />
-
-- DAX Formula for Dynamics Title: `` Gateway title = SELECTEDVALUE('Measure'[Dynamic Title]) & " By Gateway Payment" ``
+  - Chart types: the Donut Chart for Gateway and the Bar Chart for Product type
+  - Purpose: The Gateway exploration provides us with insights into the most and least payment methods which have been used, and the Product Types chart illustrates what types generate the highest revenue and order volume
+   <img width="434" alt="image" src="https://github.com/user-attachments/assets/0f9b408c-937a-4618-945a-11bf5b210233" />
+  
+  - DAX Formula for Dynamics Title: `` Gateway title = SELECTEDVALUE('Measure'[Dynamic Title]) & " By Gateway Payment" ``
 
 ## DASHBOARD
 

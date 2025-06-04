@@ -19,8 +19,7 @@
 #### Customer Purchase Behavior
   The purpose is to gain an understanding of how customers react to the business based on Total Customers, Single Order Customers, Return Customer.
   - Total Customer DAX: `` Total Customer = DISTINCTCOUNT(shopify_sales[Customer Id]) ``
-  - Single Order Customer DAX:
-    `` Single Order Customer = 
+  - Single Order Customer DAX: `` Single Order Customer = 
 CALCULATE(
     COUNTROWS(VALUES(shopify_sales[Customer Id])),
     FILTER(
@@ -53,16 +52,12 @@ CALCULATE(
 - The visualizations are designed to display performance based on different provinces, according to the selected measure. Second, the bubble map also gives insights into sales and customer density at a more granular level. Last, the bar chart illustrates the top performance based on the selected KPI.  
 <img width="413" alt="Screenshot 2025-06-04 110942" src="https://github.com/user-attachments/assets/488c2299-838d-47ec-989f-c49f75f9ea7d" />
 
--  DAX Formula for filter:
-``
-Measure = {
+-  DAX Formula for filter: `` Measure = {
     ("Net Sales", NAMEOF('shopify_sales'[Net Sales]), 0),
     ("total quantity", NAMEOF('shopify_sales'[total quantity]), 1),
     ("Total Customer", NAMEOF('shopify_sales'[Total Customer]), 2),
     ("Return Customer", NAMEOF('shopify_sales'[Return Customer]), 3)
-   }
-
-`` 
+   }`` 
 - DAX Formula for Dynamics Title:
 `` Regional Title = SELECTEDVALUE('Measure'[Dynamic Title]) & " by Regions" ``
 

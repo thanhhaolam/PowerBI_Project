@@ -27,9 +27,7 @@ CALCULATE(
         CALCULATE(DISTINCTCOUNT(shopify_sales[Order Number])) = 1
     )
 ) ``
-  - Return Customer DAX:
-
-`` Return Customer = 
+  - Return Customer DAX: `` Return Customer = 
 CALCULATE(
     COUNTROWS(VALUES(shopify_sales[Customer Id])),
     FILTER(
